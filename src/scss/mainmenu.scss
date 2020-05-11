@@ -1,0 +1,222 @@
+.main-menu {
+  display: none;
+}
+
+.main-menu--nojs {
+  display: block;
+}
+
+.main-menu--opened {
+  display: block;
+}
+
+.main-menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $primary-color;
+  flex-direction: column;
+  justify-content: flex-start;
+  list-style-type: none;
+  position: absolute;
+  font-weight: 500;
+  font-size: 27px;
+  color: $black;
+  width: 100%;
+  top: 80px;
+  left: 0;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.15);
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu__item {
+  padding-top: 21px;
+  padding-bottom: 21px;
+  padding-left: 1px; 
+  border-top: 1px solid $blue;
+  position: relative;
+}
+
+.main-menu__item:nth-last-child(1) {
+  padding-top: 45px;
+  padding-bottom: 44px;
+  display: flex;
+  justify-content: center;
+}
+
+.main-menu__item__link {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.main-menu__item__signup {
+  background-color: $violet;
+  font-size: 18px;
+  line-height: 18px;
+  color: $primary-color;
+  padding-left: 59px;
+  padding-right: 58px;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.main-menu__help {
+  background-color: $menuwhite;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  border-top: 1px solid $blue;
+}
+
+.main-menu__help__item {
+  padding-top: 17px;
+  padding-bottom: 24px;
+}
+
+.main-menu__item__link--help-opened {
+  font-size: 25px;
+  line-height: 25px;
+  padding-left: 62px;
+  padding-top: 20px;
+  padding-bottom: 26px;
+}
+
+.main-menu__item--opened {
+  padding-bottom: 0;
+}
+
+.main-menu__help--closed {
+  display: none;
+}
+
+.main-menu__item--closed:after {
+  content: "";
+  position: absolute;
+  background: #212353;
+  width: 11px;
+  height: 18px;
+  right: 31px;
+  top: 30px;
+  background: url("../img/arrow-closed.svg") no-repeat 50% 50%;
+  cursor: pointer;
+}
+
+.main-menu__item--opened:after {
+  content: "";
+  position: absolute;
+  background: #212353;
+  width: 11px;
+  height: 18px;
+  right: 31px;
+  top: 30px;
+  background: url("../img/arrow-opened.svg") no-repeat 50% 50%;
+  cursor: pointer;
+}
+
+@media (min-width: $width-desktop) {
+  .main-menu {
+    display: block;
+    width: 100%;
+  }
+
+  .main-menu__list {
+    flex-direction: row;
+    position: inherit;
+    box-shadow: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+  }
+
+  .main-menu__item {
+    padding: 0;
+    border-top: none;
+    margin-left: 20px;
+    margin-top: 45px;
+  }
+
+  .main-menu__item:hover > .main-menu__item__link {
+    color: $violet;
+  }
+
+  .main-menu__item__link--help-opened:hover {
+    color: $violet;
+  }
+
+  .main-menu__item:nth-child(1) {
+    margin-left: 100px;
+  }
+
+  .main-menu__item:nth-child(3) {
+    margin-left: 30px;
+  }
+
+  .main-menu__item:nth-last-child(1) {
+    padding: 0;
+    margin-left: auto;
+    margin-top: 30px;
+  }  
+
+  .main-menu__item--closed:after {
+    content: "";
+    position: absolute;
+    background: #212353;
+    width: 6.25px;
+    height: 10px;
+    right: -14px;
+    top: 10px;
+    background: url("../img/arrow-small-down.svg") no-repeat 50% 50%;
+    cursor: pointer;
+  }
+
+  .main-menu__item--closed:hover:after {
+    content: "";
+    position: absolute;
+    background: #212353;
+    width: 6.25px;
+    height: 10px;
+    right: -14px;
+    top: 10px;
+    background: url("../img/arrow-small-up.svg") no-repeat 50% 50%;
+    cursor: pointer;
+  }
+
+  .main-menu__help__item {
+    padding-bottom: 0;
+    padding-top: 22px;
+  }
+
+  .main-menu__help__item:nth-child(2) {
+    padding-top: 6px;
+  }
+
+  .main-menu__item:nth-child(2):hover .main-menu__help {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    background: url("../img/help-block.svg") no-repeat 50% 20%;
+    width: 169px;
+    height: 101px;
+    top: 35px;
+    left: 8px;
+    display: block;
+    flex-direction: column;
+    border: none;
+  }
+
+  .main-menu__item:nth-child(2):hover .main-menu__help .main-menu__item__link--help-opened {
+    font-size: 16px;
+    line-height: 160%;
+    padding-left: 24px;
+    padding-top: 24px;
+    padding-bottom: 0px;
+  }
+}
